@@ -1,0 +1,117 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Information für die Titelseite der Beamer-Präsentation:
+%
+\title{Mathematische Textverarbeitung mit \LaTeX}
+\subtitle{Eine kurze Einführung im Fachdidaktik-Seminar \\ ``Digitale Werkzeuge für den Mathematikunterricht''}
+\author{Ingrid Lenhardt, Judith Schilling}
+%\date{WS 18/19}
+   
+\begin{document}
+ 
+% Erzeugen der Titelseite 
+\frame{\titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% neue Seite in der Beamer-Präsentation
+%
+\begin{frame}
+\frametitle{Was ist \LaTeX?}  % Überschrift
+
+Softwarepaket zur einfachen Benutzung des Textsatzsystems \TeX 
+\begin{itemize} % Auzählung ohne Nummern
+ \item \TeX \ wurde von Donald E. Knuth an der Stanford University entwickelt
+ \item \LaTeX \ wurde in den 80er Jahren von Leslie Lamport entwickelt
+ \item \textbf{kein WYSIWYG} % Wort in Fettdruck 
+       (What-you-see-is-what-you-get) wie viele Office-Programme
+ \item Autor erstellt Textdateien mit Befehlen zur Formatierung \\ % hier wird Zeilenumbruch erzwungen
+       $ \rightarrow $ % Pfeil nach rechts als ein mathematisches Zeichen im Text 
+       sauberes Layout, ausgereifter Formelsatz, 
+ \item Formeln können im Text eingebunden werden: $\sqrt{2} \approx 1.4$ 
+       % Das Dollar-Zeichen markiert Beginn und Ende der Forel im Text 
+       oder als abgesetzte Formel gesetzt werden: 
+       % hier beginnt die abgesetzte Formel alternativ \begin{equation}
+       \[ 
+          \int_{-1}^1 \frac{1}{1+x^2} dx = \arctan(1) -\arctan (-1) = \frac{\pi}{2}
+       \] 
+       % hier endet die abgesetzte Formel alternativ \end{equation}
+ \item \LaTeX \ ist ideal für lange Arbeiten, Texte mit vielen Sonderzeichen, Verweisen
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{frame}
+\frametitle{Weitere Vorteile}
+
+\begin{enumerate} % Aufzählung mit Nummern
+ \item Es gibt Installationen für die meisten Betriebssysteme
+ \item Für den Einstieg gibt es einfach zu bedienende Online-Versionen (z.B. Overleaf, ShareLaTeX) 
+ \item Viele Zusatzpakete sind vorhanden (z.B. auch für chemische Strukturformeln)
+ \item Ergebnis (i.d.R. PDF-Dokument) ist unabhängig von der Rechnerplattform
+ \item Software ist \underline{frei}: % unterstreichen
+       \texttt{http://www.latex-project.org/} % Schreibmaschinenschrift
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{frame}[fragile]
+\frametitle{Erste Schritte in  \LaTeX}
+Jede Textdatei startet mit dem Typ des Dokuments, z.B. % in dieser Umgebung werden \LaTeX-Befehle unverändert abgedruckt
+{\color{red} % Umschalten auf die Farbe rot - bis die geschweifte Klammer geschlossen wird 
+ % in der verbatim-Umgebung werden \LaTeX-Befehle unverändert abgedruckt
+\begin{verbatim} 
+\documentclass{beamer}, \documentclass{article},  ...
+\end{verbatim}
+}
+\pause 
+
+Im anschließenden Vorspann werden Pakete geladen, Seitenränder (Satzspiegel) vereinbart, eigene Befehle definiert u.Ä., z.B.
+{\color{red}
+\begin{verbatim} 
+ \usepackage{german}          % für Umlaute, Trennung 
+ \usepackage{amsmath,amssymb} % für math. Zeichen
+ \textwidth170mm              % für Textbreite 
+ \newcommand{\R}{\mathbb{R}}  % für reelle Zahlen
+\end{verbatim}
+}
+\pause
+
+Der zu setzende Text steht zwischen
+
+{\color{red}
+\verb|\begin{document}|
+}
+und
+{\color{red}
+\verb|\end{document}|
+}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{frame}[fragile]
+\frametitle{Zu guter Letzt}
+
+Die zu dieser Präsentation gehörige Textdatei kann als \textit{Vorlage für eine eigene Präsentation} % Kursivschrift
+verwendet werden.
+  
+Weiter Hilfen zum Arbeiten mit \LaTeX \ (Stand Oktober 2019):
+\begin{verbatim} 
+https://latex.tugraz.at/latex/tutorial
+http://www.nagel-net.de/Latex/DOKU/Latexkurs_Skript.pdf 
+http://www.ptep-online.com/ctan/lshort_german.pdf
+\end{verbatim} 
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document} % Alles hinter Prozentzeichen oder hinter \end{document} wird als Kommentar behandelt.
+
+Beachte:
+Latex erzeugt jede Menge Hilfs-Dateien, die nicht archiviert werden müssen:  *.aux *.log *.nav *.out *.vrb *.snm *.toc
+Bilder liegen als eigene Dateien vor. Mit den Bild-Dateien und der *.tex-Datei wird das pdf-Dokument erzeugt.
+Manchmal muss mehrmals übersetzt werden, bis alle Verweise stimmen oder das Inhaltsverzeichnis korrekt ist.
+
