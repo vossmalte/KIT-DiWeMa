@@ -86,28 +86,30 @@
 \tableofcontents
 \end{frame}
 
-\section{Profilfach IMP}
-    \subsection{Lehrplan}
-    \begin{frame}{Example slide A}
-    \begin{itemize}
-    \item
-    \pause
-    \item Bullet point 2
-    \item \dots
-    \end{itemize}
+\section{IMP}
+    \begin{frame}{Profilfach IMP}
+        \begin{itemize}[<+->]
+            \item IMP ist ein Profilfach
+            \item wird in Klassenstufe 8 bis 10 unterrichtet
+            \item alternativ zu NWT oder 3. Fremdsprach
+        \end{itemize}
     \end{frame}
 
-    \subsection{Subsection 1.2}
-    \begin{frame}{Example slide B}
-    \begin{block}{Block 1}
-    \begin{itemize}
-    \item Bullet point 1
-    \pause
-    \item Bullet point 2
-    \item \dots
-    \end{itemize}
-    \end{block}
+    \begin{frame}{Lehrplan - inhaltsbezogene Kompetenzen}
+        \includegraphics[keepaspectratio, width=\textwidth]{figures/IMP_10}
+        \cite{bildungsp}
+        \tiny\url{http://www.bildungsplaene-bw.de/,Lde/LS/BP2016BW/ALLG/GYM/IMP}
     \end{frame}
+
+    \begin{frame}{Prozessbezogene Kompetenzen}
+    
+        \includegraphics[keepaspectratio, width=0.95\textwidth]{figures/IMP_Prozess.png}
+        \cite{bildungsp}
+        \pause
+
+    \end{frame}
+        
+
 
 \section{Graphen}
     \begin{frame}{Was sind Graphen?}
@@ -160,30 +162,43 @@
 
         \pause
 
-        \begin{figure}[h]
-            \centering
-            \begin{tikzpicture}
-                \begin{scope}[color=black]
-                \draw[fill] (0,0) circle (2pt);
-                \draw[fill] (1,0) circle (2pt);
-                \draw[fill] (0,1) circle (2pt);
-                \draw[fill] (0.5,1.5) circle (2pt);
-                \draw[fill] (1,1) circle (2pt);
-                \end{scope}
-                \begin{scope}[color=blue]
-                \draw (0.5,1.5) node[above] {$1$};
-                \draw (1,1) node[right] {$2$};
-                \draw (1,0) node[right] {$3$};
-                \draw (0,0) node[left] {$4$};
-                \draw (0,1) node[left] {$5$};
-                \end{scope}
-                \draw[-,rounded corners=0.1cm]
-                (0,0) -- (1,0) -- (0,1) -- (1,1) -- (0,0)
-                -- (0,1) -- (0.5,1.5) -- (1,1) -- (1,0);
-            \end{tikzpicture}
-            \caption{Das Haus vom Nikolaus}
-            \label{fig:hausvomnikolaus}
-        \end{figure}
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}[h]
+                    \centering
+                    \begin{tikzpicture}
+                        \begin{scope}[color=black]
+                        \draw[fill] (0,0) circle (2pt);
+                        \draw[fill] (1,0) circle (2pt);
+                        \draw[fill] (0,1) circle (2pt);
+                        \draw[fill] (0.5,1.5) circle (2pt);
+                        \draw[fill] (1,1) circle (2pt);
+                        \end{scope}
+                        \begin{scope}[color=blue]
+                        \draw (0.5,1.5) node[above] {$1$};
+                        \draw (1,1) node[right] {$2$};
+                        \draw (1,0) node[right] {$3$};
+                        \draw (0,0) node[left] {$4$};
+                        \draw (0,1) node[left] {$5$};
+                        \end{scope}
+                        \draw[-,rounded corners=0.1cm]
+                        (0,0) -- (1,0) -- (0,1) -- (1,1) -- (0,0)
+                        -- (0,1) -- (0.5,1.5) -- (1,1) -- (1,0);
+                    \end{tikzpicture}
+                    \caption{Das Haus vom Nikolaus}
+                    \label{fig:hausvomnikolaus}
+                \end{figure}
+            \end{column}
+            \pause
+            \begin{column}{0.5\textwidth}
+                Besprechung der Hausaufgabe:
+                \begin{itemize}
+                    \item Grad der Knoten?
+                    \item Bedeutung des Grads
+                    \item HvN in einem Zug zeichenbar?
+                \end{itemize}
+            \end{column}
+        \end{columns}
     \end{frame}
 
     \begin{frame}[allowframebreaks]{Königsberger Brückenproblem}
@@ -217,9 +232,10 @@
             \end{tikzpicture}  
             \caption{Königsberg als Graph}
         \end{figure}  
-    \end{frame}
 
-\subsection{Planare Graphen}
+        \pause
+        Begriffe: Eulerweg, -kreis
+    \end{frame}
 
     \begin{frame}{Planare Graphen}
         \begin{columns}
@@ -356,6 +372,47 @@
     \end{block}
     \end{frame}
 % K_{3,3} Versorger-Verbraucher-Problem
+
+    \begin{frame}{Graphen färben}
+        \begin{block}{Färbbarkeitsproblem}
+            Wie viele Farben brauche ich, damit je zwei benachbarte Knoten
+            eines Graphen \emph{nicht} die gleiche Farbe haben?
+        \end{block}
+        \pause
+        \begin{figure}[]
+            \centering
+            \includegraphics[keepaspectratio, width=.5\textwidth]{figures/usa.png}
+            \caption{Bundesstaaten sind Knoten, Nachbarn sind Nachbarn}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Graphen färben}
+        \begin{columns}
+            \begin{column}{.5\textwidth}
+                \begin{block}{4-Farben-Satz}
+                    Planare Graphen sind mit höchstens vier Farben färbbar, um das Färbbarkeitsproblem zu lösen.
+                \end{block}
+            \end{column}
+            \begin{column}{.5\textwidth}
+                \begin{figure}[]
+                    \centering
+                    \includegraphics[keepaspectratio, width=.7\textwidth]{figures/4Farben.png}
+
+                    \tiny Von Inductiveload - Based on a this raster image by chas zzz brown on en.wikipedia., 
+                    CC BY-SA 3.0, \url{https://commons.wikimedia.org/w/index.php?curid=1680050}
+                \end{figure}
+            \end{column}
+        \end{columns}   
+    \end{frame}
+
+    \begin{frame}{Dijkstra-Algorithmus}
+        \begin{itemize}[<+->]
+            \item berechnet kürzesten Weg in einem Graph von $A$ nach $B$
+            \item naive Beschreibung:\\
+                Laufe immer die kürzeste bekannte Route vom Startknoten, 
+                bis du am Ziel bist.
+        \end{itemize}
+    \end{frame}
 
 \section{Videos}
     \begin{frame}{Graphen und Euler-Characteristik}
