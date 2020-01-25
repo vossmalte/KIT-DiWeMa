@@ -1,0 +1,7 @@
+{
+    "cSpell.ignoreRegExpList": [
+        "/%.*/",     // ignores comments in LaTeX
+        "/\\*/"
+    ],
+    "cSpell.language": "de,en"
+}
